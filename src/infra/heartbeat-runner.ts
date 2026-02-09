@@ -687,8 +687,7 @@ export async function runHeartbeatOnce(opts: {
         sessionKey,
         updatedAt: previousUpdatedAt,
       });
-      // HEARTBEAT_OK from the model is an internal ack token and should be discarded.
-      // Do not relay it to user channels, even when showOk is enabled.
+      // HEARTBEAT_OK from the model is an internal ack token and should be discarded, even when showOk is enabled.
       emitHeartbeatEvent({
         status: "ok-token",
         reason: opts.reason,
